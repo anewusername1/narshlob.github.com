@@ -1,0 +1,9 @@
+---
+layout: post
+title: My First Post
+---
+
+{{ page.title }}
+================
+
+So I stole this layout directly from Tom Preston-Werner. Shamelessly. Eventually I'll change it to make it my own. I'm comfortable using it for now though.
