@@ -1,0 +1,18 @@
+---
+layout: post
+title: How to Multicast With RabbitMQ and the AMQP/Bunny Gems
+---
+
+{{ page.title }}
+================
+
+At my company (MoneyDesktop) we sometimes need to send a single message to multiple different services. This is actually pretty simple using the AMQP and Bunny gems. The first thing we do is create a couple subscribers.
+Subscriber 1:
+<script src="https://gist.github.com/1151767.js?file=subscriber1.rb"></script>
+Subscriber 2:
+<script src="https://gist.github.com/1151767.js?file=subscriber2.rb"></script>
+
+The important thing to note about these subscribers is the fact that they subscribe to a different queue. The queue name of the first is "service1.usermanager.user.login" while the second is "service2.usermanager.user.login". This tells RabbitMQ to divide a message sent using the "usermanager.user.login" routing key into two different queues.
+
+Here's an example publisher sending a message using the "usermanager.user.login" routing key:
+<script src="https://gist.github.com/1151767.js?file=publisher.rb"></script>

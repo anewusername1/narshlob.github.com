@@ -16,10 +16,11 @@ html, body {
 }
 
 body {
-  background-color: white;
+  background-color: #333;
   font: 13.34px helvetica, arial, clean, sans-serif;
   *font-size: small;
   text-align: center;
+  color: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,15 +36,15 @@ p {
 }
 
 a {
-  color: #00a;
+  color: #eee;
 }
 
 a:hover {
-  color: black;
+  color: #aaa;
 }
 
 a:visited {
-  color: #a0a;
+  color: #ccc;
 }
 
 table {
@@ -98,7 +99,7 @@ ul.posts {
   }
 
   .site .title a:hover {
-    color: black;
+    color: #c10;
   }
 
   .site .title a.extra {
@@ -108,7 +109,7 @@ ul.posts {
   }
 
   .site .title a.extra:hover {
-    color: black;
+    color: #ddd;
   }
 
   .site .meta {
@@ -196,3 +197,6 @@ ul.posts {
     margin-bottom: 1em;
   }
 
+.gist-highlight {
+  background-color: #333;
+  }
