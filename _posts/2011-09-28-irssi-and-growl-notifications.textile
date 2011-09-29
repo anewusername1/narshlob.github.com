@@ -9,3 +9,19 @@ The biggest thing missing from Irssi was my growl notifications. I did a quick g
 Here's the current script:
 <script src="https://gist.github.com/1245924.js?file=growlme.pl"></script>
 One known problem with this script is if someone sends a message that contains a ', the script blows up. I'll be fixing that shortly.
+
+<hr />
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'narshlob';
+    var disqus_identifier = 'irssi-and-growl-notifications';
+    var disqus_url = 'http://narshlob.github.com/2011/09/28/irssi-and-growl-notifications.html';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
