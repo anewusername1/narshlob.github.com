@@ -20,7 +20,8 @@ Here's an example publisher sending a message using the "usermanager.user.login"
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'narshlob'; // required: replace example with your forum shortname
-    var disqus_identifier = 'rabbitmq-multicast'
+    var disqus_identifier = 'rabbitmq-multicast';
+    var disqus_url = 'narshlob.github.com/2011/09/26/rabbitmq-multicast.html';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
