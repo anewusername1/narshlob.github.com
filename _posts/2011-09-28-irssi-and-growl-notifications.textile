@@ -3,9 +3,13 @@ layout: post
 title: Irssi and Growl Notifications
 ---
 I recently decided to use something else for my IRC client. I was using Adium, but I don't like having so many applications open at once (it's the whole cmd-tab/my-dock-is-huge-and-I-don't-like-it thing).
+
 Honestly, if I could, I'd only have my terminal and MacVim open at any given time. Not possible though. Sadly. Back to the topic at hand though.
+
 I started using Irssi as my IRC client on Monday of this week (it's now Wednesday). All I have to say is I'll never go back :)
+
 The biggest thing missing from Irssi was my growl notifications. I did a quick google search for growl notification scripts for Irssi and came across a few. One in particular was designed to capture private messages and mentions from chat rooms and send them across a network. That's not quite what I wanted, but I could work with it. The script was saving all messages to a file. All I did was take out all references to the file saving and replace that with growl notifications (using growlnotify).
+
 Here's the current script:
 <script src="https://gist.github.com/1245924.js?file=growlme.pl"></script>
 One known problem with this script is if someone sends a message that contains a ', the script blows up. I'll be fixing that shortly.
