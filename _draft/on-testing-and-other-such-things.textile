@@ -1,0 +1,16 @@
+---
+layout: post
+title: Keeping a Clean Git History
+---
+
+{{ page.title }}
+================
+
+I had a conversation with a co-worker the other day in which he was adament that testing first doesn't work. He was very forceful in saying that he believed he'd be writing the same tests (or re-writing them) three or four different times before he got his code to where he thought it should be. I pointed him to an article explaining why testing first is the best solution. I'll attempt to address his concerns (and maybe the concerns of others) in this article, using the things I've learned.
+
+
+Sources
+http://www.sarahmei.com/blog/2010/05/29/outside-in-bdd/
+http://rubylearning.com/blog/2010/10/05/outside-in-development/
+http://stackoverflow.com/questions/4904096/whats-the-difference-between-unit-functional-acceptance-and-integration-tests
+
