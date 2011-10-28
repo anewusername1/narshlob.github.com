@@ -1,0 +1,22 @@
+---
+layout: post
+title: Command Line Find and Replace
+--
+
+I found a bunch of different websites telling me how to do a find and replace with sed but I kept getting this error:
+    "unterminated substitute in regular expression"
+
+I finally figured out that a sed command written like this:
+    sed -i "s/ version='3.1'//g" somefile.rb
+wouldn't work since the -i switch is looking for an extension. Here's exactly what was happening:
+  the -i switch thought the regex I was giving was the extension
+  the file I was passing in was being mistaken for a regex
+
+Here's the command that actually works:
+  sed -i '' "s/ version='3.1'//g" file
+
+And just for fun, here's how to search and replace within a directory of files using just the command line:
+  find spec/lib/mdx/mdx3/version1/ -type f -exec sed -i '' "s/ version='3.1'//g" {} \;
+
+Since sed doesn't handle newlines that easily, I used perl to remove a certain tag that had a newline in it:
+  find spec/lib/clients/mdx/ -type f -exec perl -i -p -e 's/\\n  <version>3.4<\/version>//g' {} \;
