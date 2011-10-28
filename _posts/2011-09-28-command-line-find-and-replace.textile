@@ -3,6 +3,9 @@ layout: post
 title: Command Line Find and Replace
 ---
 
+{{ page.title }}
+================
+
 I found a bunch of different websites telling me how to do a find and replace with sed but I kept getting this error:
     "unterminated substitute in regular expression"
 
