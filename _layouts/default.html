@@ -11,17 +11,8 @@
    <!-- Homepage CSS -->
    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
 
-   <!-- Typekit -->
-   <!-- <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script> -->
-   <!-- <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 </head>
 <body>
-
-<!-- ClickTale Top part -->
-<!-- <script type="text/javascript"> -->
-<!-- var WRInitTime=(new Date()).getTime(); -->
-<!-- </script> -->
-<!-- ClickTale end of Top part -->
 
 <div class="site">
   <div class="title">
@@ -47,27 +38,22 @@
 </div>
 
 
-<!-- ClickTale Bottom part
-<div id="ClickTaleDiv" style="display: none;"></div>
+<!-- Google Analytics -->
 <script type="text/javascript">
-if(document.location.protocol!='https:')
-  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-</script>
-ClickTale end of Bottom part -->
 
-<!-- Google Analytics
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26008164-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-6016902-1");
-pageTracker._trackPageview();
-</script>
-Google Analytics end -->
+
+<!-- Google Analytics end -->
 
 </body>
 </html>
