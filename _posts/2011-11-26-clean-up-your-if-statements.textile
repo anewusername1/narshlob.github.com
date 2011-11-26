@@ -1,0 +1,25 @@
+---
+layout: post
+title: Clean Up Your If Statements
+---
+
+{{ page.title }}
+================
+
+
+If you're like me, you've seen thousands of if statements, some messy, some pretty clean. Sometimes you come across a situation that requires a hideous if statement, like the one below (contrived)
+
+
+<script src="https://gist.github.com/1396472.js?file=messy_if.rb"></script>
+
+
+If you're like most people, you'll look at that statement and think "I'll come back to this if I need to". It's not something most people take the time to try and figure out. Fortunately, there's a much c!eaner way to write this. Storing some of the conditions in variables will simplify the statement and make it more readable
+
+
+<script src="https://gist.github.com/1396472.js?file=cleaner_if.rb"></script>
+
+
+I'm betting you understood the second example a lot quicker than the first. It's much easier to read clearly separated boolean statements than it is to traverse through a mess of them.
+
+
+Go forth and code cleanly, child.
