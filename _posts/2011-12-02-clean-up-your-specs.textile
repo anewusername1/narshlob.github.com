@@ -11,7 +11,9 @@ Often times I'll come across some rspec code that looks like this:
 <script src="https://gist.github.com/1423678.js?file=bad_spec.rb"></script>
 
 
-First off, 'it' statements shouldn't start with 'should'. The description should say something more along the lines of %{it "only allows strings that include the letter 'a'"}. The reason for this is that when we run these specs with the documentation format, we want to see something like:
+The first thing I find wrong with this is that 'it' statements should never start with 'should'.
+The assertion needs to be more declarative. Instead of saying "this method might possibly do X", it needs to be more assertive; "this method absolutely does X"
+This also helps us when we view our specs using the documentation format:
 
 <div class='nv'>
 method name
@@ -19,16 +21,25 @@ method name
 </div>
 
 
-It just reads better, and you get to type less (read <a href='http://justinko.me/post/1534681350/rspec-should-i-use-it-should'>this</a> post for more info on why you shouldn't use 'should')
+This reads much better than the following:
 
+<div class='nv'>
+method name
+  should only allows strings that include the letter 'a'
+</div>
 
 You should be aware of how you're asserting equality also. In this test we have:
-.should == true
-If this were testing equality, we would want to use RSpec's built in 'eq' operator (there's also equal, eql, and be, <a href='https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/equality-matchers'>read</a>)
-My main reason for wanting 'eq' over '==' is for readability. If I wanted to see if two objects were exactly the same, I'd use :some_sym.equal?(:some_sym), which should return true since :some_sym is the exact same object in both instances.
-There's also a couple more helpers available to us, built into RSpec. What we'd use here is ".should be_true" or ".should be_false"
+StringAllower.allowed?('some car').should == true
+RSpec has some built in equality checkers better suited for this assertion.
+In this instance we would want to use RSpec's built in 'eq' operator (in general, if RSpec has a built in operator, we use it)
 
-The last problem I have with this test is that it includes more than one assertion in the actual test. There's a couple different ways to re-write it so there's only one assertion per 'it' statement. The way I choose may or may not fit with your coding style, but here's how I typically refactor these specs:
+If we wanted to see if two objects were exactly the same, we'd use something like this:
+<div class='nv'>
+:some_sym.equal?(:some_sym)
+</div>
+which will return true since :some_sym is the exact same object in both instances.
+
+The last problem I have with this test is that it includes more than one assertion in the actual test.
+There's a couple different ways to re-write it so there's only one assertion per 'it' statement.
+A better way to write these tests would be the following:
 <script src="https://gist.github.com/1423678.js?file=good_spec.rb"></script>
-
-Take note that this contrived example is still a poorly written and brittle test. I'm just using it to highlight some flaws I've seen in using matchers and assertions. The day may come when I re-write this test to be a better example. But it is not this day. Go forth and conquer.
