@@ -16,7 +16,6 @@ The biggest thing missing from Irssi was my growl notifications. I did a quick g
 
 Here's the current script:
 <script src="https://gist.github.com/1245924.js?file=growlme.pl"></script>
-One known problem with this script is if someone sends a message that contains a ', the script blows up. I'll be fixing that shortly.
 
 <hr />
 <div id="disqus_thread"></div>

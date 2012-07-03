@@ -12,10 +12,11 @@ Often times I'll come across some rspec code that looks like this:
 
 
 First off, 'it' statements shouldn't start with 'should'. The description should say something more along the lines of %{it "only allows strings that include the letter 'a'"}. The reason for this is that when we run these specs with the documentation format, we want to see something like:
-<pre>
+
+<div class='nv'>
 method name
   only allows strings that include the letter 'a'
-</pre>
+</div>
 
 
 It just reads better, and you get to type less (read <a href='http://justinko.me/post/1534681350/rspec-should-i-use-it-should'>this</a> post for more info on why you shouldn't use 'should')
