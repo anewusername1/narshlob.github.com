@@ -1,0 +1,70 @@
+---
+layout: post
+title: Serialization and Your Business Logic
+---
+
+{{ page.title }}
+================
+
+
+In order to build a better platform, you should be aware of the distinction between business logic and serialization. There should be a clear separation of the two. Adding business logic to your serialization methods is detremental to building your software as a platform as it ties responsibilies too closely. Software built in this way will not easily scale and will be tougher to maintain.
+
+An example of serialization would be like so:
+
+class Post
+  has_many :comments
+
+  def serialize_to_hash
+    {
+      :post_id     => globally_unique_id,
+      :post_name   => title,
+      :post_author => author
+    }
+  end
+end
+
+A common way we would mix in our business logic would be to add comments into that serialize_to_hash method, ex:
+
+
+  def serialize_to_hash(comments_requested=false)
+    post_hash = {
+      :post_id     => globally_unique_id,
+      :post_name   => title,
+      :post_author => author
+    }
+    if(comments_requested == true)
+      post_hash[:comments] = comments.map {|c| c.serialize_to_hash }
+    end
+  end
+
+This tightly couples the comments to the post, which may or may not be what we want. In any case, we should be requesting comments separately from the request for posts. This practice of keeping business logic out of our serialization methods will help immensely when it comes time to refactor things. Here's how the Post class and the Comment class should look:
+
+class Post
+  has_many :comments
+
+  def serialize_to_hash
+    {
+      :post_id     => globally_unique_id,
+      :post_name   => title,
+      :post_author => author
+    }
+  end
+end
+
+class Comment
+  belongs_to :post
+
+  def serialize_to_hash
+    {
+      :post_id => post_id,
+      :comment_author => author,
+      :comment_body => body
+    }
+  end
+end
+
+These serialization methods would be utilized in this way:
+
+*utilize them*
+
+This may not be the best example, but if you start applying this train of thought to your current project(s) you'll soon realize just how powerful this separation of responsibilities can be.

@@ -1,0 +1,11 @@
+---
+layout: post
+title: Moving Slower is Moving Faster
+---
+
+{{ page.title }}
+================
+
+When building software correctly (especially when building a platform as opposed to building a product), taking the time to do things right might make things feel like they're moving slowly. This illusion is just that, an illusion.
+
+If you want to build something extendable, something that you can build more than one product on top of, you need to slow down and take your time to ensure you're building it in the most extendable way possible. If you do things right, you may feel like you're moving slow, but in reality you're actually saving your future self loads of time by paying attention to detail, asking questions, and generally doing things the right way. You'll actually be moving faster.
