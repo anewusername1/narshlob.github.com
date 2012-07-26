@@ -1,0 +1,27 @@
+---
+layout: post
+title: Don't Mix Assertions and Test Setup
+---
+
+{{ page.title }}
+================
+
+There've been a few times where I'll be writing a test and I'll do something like the following:
+
+before(:each) do
+  described_class.should_receive(:database_call)
+end
+
+This may work on some cases, but it's not a good test design. If you want to make sure every test is asserting that described_class does indeed receive the method :database_call, you should use a shared_example. Otherwise, your before block should look like this:
+
+before(:each) do
+  described_class.stub(:database_call)
+end
+
+If you want to assert that described_class receives :database_call, you can always add that to your test:
+
+it 'receives database_call' do
+  described_class.should_receive(:database_call)
+end
+
+The other problem this prevents is when you have an assertion testing a code path that doesn't actually receive :database_call.
